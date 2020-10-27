@@ -52,12 +52,22 @@
 
         //Пустые массивы и false
         $arrayEmpty = [];
-        echo '<br> Массив и empty = ' . empty($arrayEmpty);
+        $temp = empty($arrayEmpty);
+        echo "<br> Массив и empty = $temp";
 
         //Копирование
-        $arrayCopy = $array4;
-        echo '<br> Копирование = ';
+        $arrayCopy = $array4;   //проверить!!!
+        echo '<br>+-----------------------------------------------------------+ <br>';
+        echo '<br> Скопированный массив =';
         var_dump($arrayCopy);
+        echo '<br>';
+        echo '+-----------------------------------------------------------+ <br>';
+        echo "изменяем массив arrayCopy и получаем ";
+        array_push($arrayCopy,'new');
+        var_dump($arrayCopy);
+        echo '<br>+-----------------------------------------------------------+ <br>';
+        echo "<br>исходный массив "; 
+        var_dump($array4);
         echo '<br>';
         echo 'Шаг 2.Функции для работы с массивами ---------------------------------------------------<br>';
     //Шаг 2.Функции для работы с массивами
@@ -160,13 +170,13 @@
     echo '<br>';
     echo '<br>';
     //Foreach нахождение первого и последнего элемента
-    $outIndex=1;
+    $outIndex=0;
     foreach($array4 as $indexArray)
     {
-        if($outIndex==1){
+        if($outIndex==0){
             echo 'первый элемент массива это: ' . $indexArray . '<br>';
         }
-        else if($outIndex==count($array4))
+        else if($outIndex==count($array4)-1)
         {
             echo 'последний элемент массива это: ' . $indexArray . '<br>';
         }
@@ -176,7 +186,7 @@
     echo '<br>';
 
     //многомерный массив
-    $multi_array=[
+    $multi_array=[//!
         $Gemüse, $Fruchte, $array4
     ];
 
@@ -227,8 +237,8 @@
     echo '<br>';
     echo '6. Классы и  методы---------------------------------------------------<br>';
 
-//Шаг 6. Классы и  методы
-    class Person
+//Шаг 6. Классы и  методы 
+    class Person    //разобраться в инкапсуляции
     {
         //публичные свойства
         public $name = 'User';
